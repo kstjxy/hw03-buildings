@@ -1,54 +1,47 @@
 # CIS 5660 HW03 Procedural Buildings
 
-## Project Overview
-In this homework you’ll gain more experience with tool creation and loops. The core of this homework will be following a Procedural House tutorial to create a multi-floor building generator. The tutorial is linked here: 
-https://www.youtube.com/watch?v=uIe97023sDk&t=979s&ab_channel=SimonHoudini 
 
-## Part 0: Setup and Planning 
-### SideFX Labs 
-The tutorial requires some nodes from SideFX Labs. If you haven’t already installed it, you can do so at the “Labs/Packages” tab of the Houdini Launcher.  
+https://github.com/user-attachments/assets/c78639cf-3ce6-437f-8895-2ae148c92f04
 
-### Project Planning
-Before you begin on this project, skim through the tutorial and then pick a building type/style you’d like to emulate (either from photos or concept art). You should watch the entirety of the tutorial  before committing to a style so you can pick something that is manageable and will be achievable using the techniques in the tutorial.  
-Of course, you’re welcome to adapt the setup to support additional logic/features to match your style, and particularly complex additions could merit extra credit :) On the other hand, if you’re newer to Houdini and want to stick relatively close to the tutorial, that’s okay too. Just be sure to think through what changes your chosen buildings will require (additional assets? different placement logic?) before diving into the project so you don’t bite off more than you can chew.  
-Make sure the include the reference you select in your README, and don’t forget to credit your sources.  
-Here are a few examples of possible building styles that could be a decent fit for inspiration:
-CIS 5660 HW03 Procedural Building 1 
-https://www.behance.net/gallery/23773965/ISOBuilding-concept-art 
 
-https://polycount.com/discussio 
-low-poly-building
-https://www.artstation.com/artwork/m6xYy 
+## Overview
+For this project, I chose the Harry Potter Village Flourish and Blotts Bookshop as my reference. I followed the tutorial instructions and achieved all the required functionalities.
 
-## Part 1: Box Stacking HDA
-First, start by following the tutorial to make a simple HDA that stacks boxes on each other.  Important note about HDA creation:  
-Creating an HDA saves a .hda file at the location you specify with the definition of your HDA. Be sure to submit this .hda file along with your .hip file so we can see the contents of your tool.  
-Alternatively, when you save your HDA you can choose the “Embedded in HIP File” option (rather than specifying the path), and the hda definition will be automatically embedded in your hip file (and no additional files will be needed with submission).  
+<img src="https://github.com/user-attachments/assets/a544dda8-a661-4d62-99e5-bcd1a9be42e1" alt="61LdaLoSaUL _AC_SL1000_" width="20%"/>
 
-## Part 2: Add Details
-Next, Simon adds details to the boxes to create floors by refiing the shape and adding details like windows, doors, and balconies.  
-Create your own models for windows, doors, and balconies based on your chosen style using Houdini. For each of the three types, create a Null “control” node with parameters that affect your window/door/balcony output (similar to how we made a control node for the jellyfish).  
-You should have parameters to drive the width and height of the doors, windows, and balconies, as well as at least one other parameter of your choosing on each one (ex: double vs single doors, windows with and without shutters, and type of balcony railing). Apart from that, you can go as simple or complex as you like!  
-Then follow Simon’s setup to integrate your windows, doors, and balconies into your buildings.  
-CIS 5660 HW03 Procedural Building 2 
+<img src="https://github.com/user-attachments/assets/959e2e56-4bf1-4e8a-b505-0dc35efe9ebe" alt="61k1AK0aVUL _AC_SL1000_" width="20%"/>
 
-## Part 3: Pillars and Border
-Continue following the tutorial to add pillars and borders to each floor. 
 
-## Part 4: Supports
-Continue following the tutorial to add supports to floors that overhang other floors.  
-(Optional) Extra Credit 
-Throughout the tutorial, Simon mentions ways you could extend his project setup. Implement any of his suggestions: 
-More complex logic for creating supports (handle different length supports differently) Add more parameters to the user interface (for example, x and z offset options) UV and shade your models 
-Add a “manual node” where users can control detail placement manually 
-Add additional types of feature models (like fire escapes or chimneys). Note that, depending on what you choose, you might need to add new logic to integrate them into your building (ex: chimneys go on top instead of being chained on the side, fire escapes should be on one side of the building and go all the way down). We’ll award more extra credit accordingly.  
-Add some flair to your scene by dressing together multiple buildings or additional procedural props or background elements 
-Render your scene 
+Final Result:
 
-## Submission
-Update your README with 
-A description of your project 
-A video of your building tool in action 
-Create a pull request to this repository 
-Submit your Houdini file to Canvas along with a link to your pull request 
-IMPORTANT NOTE: make sure your HDA is either embedded in the HIP file or included with your submission (see the instructions under “Part 1: Box Stacking HDA” for additional details).
+<img width="350" alt="a428c7faa8b09daa6b0bc8a66adcab3" src="https://github.com/user-attachments/assets/51ba873d-8927-48a4-bb9e-8658c131db85"> <img width="350" alt="5d42b1bc4a3b0183b5478e0edf37367" src="https://github.com/user-attachments/assets/dd817013-91f3-4cf6-991b-5e556bf268e4">
+
+
+## Sub-models
+For Part 2 of the project, I created four models and added them as subnetworks in the HDA file. Each model has two different variants that I included in my building.
+
+- **Door**: Adjustable height, width, and outer door frame add-on. Doors can only appear on the first floor.
+  
+https://github.com/user-attachments/assets/53cb521d-4ba7-4cac-bf18-056e5fea1620
+
+- **Windows**: Adjustable height, width, and row/column number.
+  
+https://github.com/user-attachments/assets/8d4972d8-20bf-4b09-af61-a43bc5c4f6ca
+  
+- **Hanging Shop Sign**: Adjustable height, width, and number of signs. (Since my reference doesn't have a balcony, I spoke with Elyssa and received approval to use this hanging sign instead
+
+https://github.com/user-attachments/assets/d76206fe-bcfa-4a9b-a6b4-cf6b3699599b
+  
+- **Bay Window**: I imported this FBX model from [CGTrader](https://www.cgtrader.com/product/oak-window).
+
+  <img width="555" alt="12d3a217df39d300ed69827aded36ce" src="https://github.com/user-attachments/assets/f96d6dd9-d5d3-4afa-8adc-abc469bcaa81">
+
+I then followed the tutorial instructions to achieve additional functionalities such as pillars, borders, and supports.
+
+## Extra Credits
+- I added procedural roof tiles that always stack on the top floor of the building. The size of the tiles is also adjustable based on the top floor dimensions.
+  - Roof reference tutorial: [YouTube](https://www.youtube.com/watch?v=rvmDcbSMXh8)
+
+https://github.com/user-attachments/assets/d0d43744-2ce9-463c-8557-d07f2e7d3264
+
+- I applied materials to all parts of the building to improve its appearance.
